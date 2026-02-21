@@ -1,0 +1,281 @@
+/* Auth modal overlay – backdrop and panel */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.overlay::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.overlay::-webkit-scrollbar-track,
+.overlay::-webkit-scrollbar-thumb,
+.overlay::-webkit-scrollbar-button {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.panel {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  min-height: 420px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.25s ease-out;
+  flex-shrink: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.panelLeft {
+  flex: 1;
+  min-width: 320px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background: #ffffff;
+  border-radius: 20px 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.panelLeft::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.panelLeft::-webkit-scrollbar-track,
+.panelLeft::-webkit-scrollbar-thumb,
+.panelLeft::-webkit-scrollbar-button,
+.panelLeft::-webkit-scrollbar-corner {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Create account modal: no scroll, content centered in white area */
+.panelSignUp .panelLeft {
+  overflow-y: hidden;
+  justify-content: center;
+}
+
+.panelSignUp {
+  max-height: 95vh;
+}
+
+.panelSignUp .formWrap {
+  justify-content: center;
+}
+
+.panelRight {
+  width: 280px;
+  flex-shrink: 0;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 20px 20px 0;
+}
+
+.welcomeHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  line-height: 1.25;
+}
+
+.welcomeText {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0 0 1.5rem;
+  opacity: 0.95;
+}
+
+.welcomeCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.welcomeCta:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  color: #64748b;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.closeBtn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.formWrap {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 2rem;
+  overflow-x: hidden;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.formWrap::-webkit-scrollbar,
+.panel::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.formWrap :global(.card) {
+  margin: 0 auto;
+  margin-bottom: 0;
+  box-shadow: none;
+  padding: 0 0 0.25rem;
+  max-width: 340px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.formWrap :global(.cardTitle),
+.formWrap :global(.cardSubtitle) {
+  text-align: center;
+  padding-right: 0;
+}
+
+.formWrap :global(.cardTitle) {
+  margin-bottom: 0.5rem;
+}
+
+.formWrap :global(.socialButtons),
+.formWrap :global(.divider),
+.formWrap :global(.form),
+.formWrap :global(.signUpRow),
+.formWrap :global(.rememberRow) {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.formWrap :global(.input),
+.formWrap :global(.inputWrap),
+.formWrap :global(.submitBtn),
+.formWrap :global(.socialBtn),
+.formWrap :global(.fieldGroup) {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.formWrap :global(.signInRow) {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    flex-direction: column;
+    max-width: 440px;
+  }
+
+  .panelLeft {
+    min-width: 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .panelRight {
+    width: 100%;
+    min-height: 200px;
+    padding: 1.5rem 1.5rem;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .welcomeHeading {
+    font-size: 1.25rem;
+  }
+
+  .welcomeText {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+}

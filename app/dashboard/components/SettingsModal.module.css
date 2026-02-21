@@ -1,0 +1,434 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+:global([data-theme="dark"]) .modal {
+  background: #1e293b;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.themeLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+}
+
+:global([data-theme="dark"]) .themeLogo {
+  color: #fbbf24;
+}
+
+:global([data-theme="dark"]) .header {
+  border-color: #334155;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+:global([data-theme="dark"]) .title {
+  color: #f1f5f9;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+:global([data-theme="dark"]) .closeBtn:hover {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.5rem;
+}
+
+:global([data-theme="dark"]) .sectionTitle {
+  color: #f1f5f9;
+}
+
+.changePasswordTrigger {
+  padding: 0.5rem 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.changePasswordTrigger:hover {
+  text-decoration: underline;
+}
+
+.sectionHint {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin: 0 0 1rem;
+}
+
+:global([data-theme="dark"]) .sectionHint {
+  color: #94a3b8;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWrap .input {
+  padding-right: 2.5rem;
+}
+
+.visibilityBtn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.visibilityBtn:hover {
+  color: #1e293b;
+  background: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .visibilityBtn {
+  color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .visibilityBtn:hover {
+  color: #f1f5f9;
+  background: #334155;
+}
+
+:global([data-theme="dark"]) .label {
+  color: #94a3b8;
+}
+
+.input {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e293b;
+}
+
+:global([data-theme="dark"]) .input {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.messageOk {
+  font-size: 0.875rem;
+  color: #16a34a;
+  margin: 0;
+}
+
+.messageError {
+  font-size: 0.875rem;
+  color: #dc2626;
+  margin: 0;
+}
+
+.submitBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.25rem;
+}
+
+.submitBtn:hover {
+  background: #1d4ed8;
+}
+
+.themeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.themeLabel {
+  font-size: 0.9375rem;
+  color: #475569;
+}
+
+:global([data-theme="dark"]) .themeLabel {
+  color: #94a3b8;
+}
+
+.toggleGroup {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.toggle,
+.toggleActive {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+}
+
+.toggle:hover {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.toggleActive {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+:global([data-theme="dark"]) .toggle {
+  background: #334155;
+  border-color: #475569;
+  color: #94a3b8;
+}
+
+:global([data-theme="dark"]) .toggle:hover {
+  background: #475569;
+  color: #f1f5f9;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: #475569;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
+:global([data-theme="dark"]) .checkRow {
+  color: #94a3b8;
+}
+
+.checkRow input {
+  width: 1rem;
+  height: 1rem;
+}
+
+.saveRow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+:global([data-theme="dark"]) .saveRow {
+  border-color: #334155;
+}
+
+.saveBtn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.saveBtn:hover {
+  background: #1d4ed8;
+}
+
+.signOutBtn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #dc2626;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.signOutBtn:hover {
+  text-decoration: underline;
+}
+
+:global([data-theme="dark"]) .signOutBtn {
+  color: #f87171;
+}
+
+/* Second modal: Change password console */
+.secondOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.secondBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.secondModal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+:global([data-theme="dark"]) .secondModal {
+  background: #1e293b;
+}
+
+.secondHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+:global([data-theme="dark"]) .secondHeader {
+  border-color: #334155;
+}
+
+.secondBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1.5rem;
+}

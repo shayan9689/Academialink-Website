@@ -1,0 +1,132 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4rem 1rem 1rem;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+:global([data-theme="dark"]) .modal {
+  background: #1e293b;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+:global([data-theme="dark"]) .header {
+  border-color: #334155;
+}
+
+.input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+:global([data-theme="dark"]) .input {
+  background: #334155;
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.results {
+  padding: 0.5rem;
+}
+
+.hint {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.resultItem {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.resultItem:hover {
+  background: #f1f5f9;
+}
+
+:global([data-theme="dark"]) .resultItem:hover {
+  background: #334155;
+}
+
+.resultTitle {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+:global([data-theme="dark"]) .resultTitle {
+  color: #f1f5f9;
+}
+
+.resultMeta {
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+:global([data-theme="dark"]) .resultMeta {
+  color: #94a3b8;
+}
+
+.empty {
+  padding: 1.5rem 1rem;
+  font-size: 0.9375rem;
+  color: #64748b;
+  margin: 0;
+}

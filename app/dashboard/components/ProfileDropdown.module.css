@@ -1,0 +1,70 @@
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 240px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  z-index: 100;
+}
+
+:global([data-theme="dark"]) .dropdown {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.userInfo {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 0.75rem;
+}
+
+:global([data-theme="dark"]) .userInfo {
+  border-color: #334155;
+}
+
+.userName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.25rem;
+}
+
+:global([data-theme="dark"]) .userName {
+  color: #f1f5f9;
+}
+
+.userEmail {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin: 0;
+}
+
+:global([data-theme="dark"]) .userEmail {
+  color: #94a3b8;
+}
+
+.signOutBtn {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #dc2626;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.signOutBtn:hover {
+  background: #fef2f2;
+}
+
+:global([data-theme="dark"]) .signOutBtn:hover {
+  background: #450a0a;
+}

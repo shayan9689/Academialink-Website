@@ -1,0 +1,47 @@
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+}
+
+.card {
+  text-align: center;
+  max-width: 24rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.text {
+  color: #64748b;
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #eff6ff;
+}
+
+.link:hover {
+  background: #dbeafe;
+}

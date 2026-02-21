@@ -4,6 +4,7 @@
   max-width: 1440px;
   margin: 0 auto;
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 /* ----- Header ----- */
@@ -99,6 +100,12 @@
   font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
 }
 
 .loginLink:hover {
@@ -115,7 +122,11 @@ button.loginLink {
 .btnSignUp {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0.5rem 1.25rem;
+  min-height: 44px;
+  min-width: 44px;
+  box-sizing: border-box;
   background: #2563eb;
   color: #fff;
   border: none;
@@ -152,6 +163,7 @@ button.loginLink {
 .hero {
   padding: 3rem 1.25rem 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .heroBanner {
@@ -165,6 +177,7 @@ button.loginLink {
   letter-spacing: 0.06em;
   margin-bottom: 1.5rem;
   border: 1px solid rgba(37, 99, 235, 0.15);
+  max-width: 100%;
 }
 
 .heroTitle {
@@ -200,8 +213,11 @@ button.loginLink {
 .btnPrimary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  box-sizing: border-box;
   background: #2563eb;
   color: #fff;
   border: none;
@@ -225,7 +241,10 @@ button.loginLink {
 .btnSecondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  box-sizing: border-box;
   background: #fff;
   color: #374151;
   border: 1px solid #e2e8f0;
@@ -290,7 +309,7 @@ button.loginLink {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem 2rem;
   align-items: center;
 }
 
@@ -413,6 +432,7 @@ button.loginLink {
 .featureImage {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
 }
 
@@ -491,6 +511,11 @@ button.loginLink {
   font-weight: 600;
   text-decoration: none;
   font-size: 1rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
 }
 
 .ctaLink:hover {
@@ -563,12 +588,6 @@ button.loginLink {
   color: #475569;
   text-align: center;
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  .missionGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ----- Footer ----- */
@@ -716,7 +735,7 @@ button.loginLink {
   text-align: center;
 }
 
-/* ----- Responsive ----- */
+/* ----- Responsive: 1024px, 768px, 640px ----- */
 @media (max-width: 1024px) {
   .feature {
     grid-template-columns: 1fr;
@@ -740,7 +759,17 @@ button.loginLink {
 @media (max-width: 768px) {
   .header {
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .headerLeft {
+    min-height: 44px;
+  }
+
+  .headerRight {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .nav {
@@ -749,15 +778,67 @@ button.loginLink {
     justify-content: flex-start;
   }
 
+  .hero {
+    padding: 2rem 1rem 0;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   .heroCta,
   .ctaButtons {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .trustRow,
+  .heroCta .btnPrimary,
+  .heroCta .btnSecondary,
+  .ctaButtons .btnPrimary {
+    width: 100%;
+  }
+
+  .trustStatsSection {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
   .statsRow {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .feature {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .featureImageWrap {
+    max-height: 240px;
+  }
+
+  .ctaBlock {
+    padding: 3rem 1rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaButtons .btnPrimary {
+    width: 100%;
+  }
+
+  .missionSection {
+    padding: 3rem 1rem;
+  }
+
+  .missionGrid {
+    grid-template-columns: 1fr;
   }
 
   .footerGrid {
@@ -782,9 +863,164 @@ button.loginLink {
   }
 }
 
-@media (max-width: 480px) {
-  .trustRow,
+@media (max-width: 640px) {
+  .header {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .logoText {
+    font-size: 1.125rem;
+  }
+
+  .hero {
+    padding: 1.5rem 0.75rem 0;
+  }
+
+  .heroBanner {
+    font-size: 0.6875rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .trustStatsSection {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .trustRow {
+    gap: 0.75rem 1rem;
+  }
+
+  .trustCell {
+    font-size: 0.875rem;
+  }
+
   .statsRow {
     grid-template-columns: 1fr;
+  }
+
+  .feature {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .featureImageWrap {
+    max-height: 200px;
+  }
+
+  .featureTitle {
+    font-size: 1.25rem;
+  }
+
+  .featureDesc {
+    font-size: 0.9375rem;
+  }
+
+  .ctaBlock {
+    padding: 2rem 0.75rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.25rem;
+  }
+
+  .ctaText {
+    font-size: 0.9375rem;
+  }
+
+  .missionSection {
+    padding: 2rem 0.75rem;
+  }
+
+  .missionTitle {
+    font-size: 1.25rem;
+  }
+
+  .missionLead {
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem 1.5rem;
+  }
+}
+
+/* Extra small devices (phones in portrait, ~380px and below) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .headerRight {
+    gap: 0.35rem;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 1.25rem 0.5rem 0;
+  }
+
+  .heroBanner {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.25rem, 5.5vw, 1.75rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .trustStatsSection {
+    padding: 1rem 0.5rem;
+  }
+
+  .trustRow {
+    gap: 0.5rem 0.75rem;
+  }
+
+  .trustCell {
+    font-size: 0.8125rem;
+  }
+
+  .statsRow {
+    gap: 0.5rem;
+  }
+
+  .feature {
+    padding: 1.25rem 0.5rem;
+  }
+
+  .featureImageWrap {
+    max-height: 180px;
+  }
+
+  .featureTitle {
+    font-size: 1.125rem;
+  }
+
+  .ctaBlock {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .missionSection {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .footer {
+    padding: 1.5rem 0.5rem 1rem;
   }
 }

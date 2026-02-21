@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
   animation: fadeIn 0.2s ease-out;
   overflow-x: hidden;
   overflow-y: auto;
@@ -253,9 +253,17 @@
 }
 
 @media (max-width: 640px) {
+  .overlay {
+    padding: 0.75rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
   .panel {
     flex-direction: column;
-    max-width: 440px;
+    max-width: 100%;
+    width: 100%;
+    max-height: none;
   }
 
   .panelLeft {
@@ -265,8 +273,8 @@
 
   .panelRight {
     width: 100%;
-    min-height: 200px;
-    padding: 1.5rem 1.5rem;
+    min-height: 180px;
+    padding: 1.25rem 1rem;
     border-radius: 0 0 20px 20px;
   }
 
@@ -277,5 +285,19 @@
   .welcomeText {
     font-size: 0.875rem;
     margin-bottom: 1rem;
+  }
+
+  .formWrap {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .overlay {
+    padding: 0.5rem;
+  }
+
+  .formWrap :global(.card) {
+    max-width: 100%;
   }
 }

@@ -5,6 +5,7 @@
   min-height: 1328px;
   margin: 0 auto;
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 /* ----- Header: match dashboard topBar for consistent UI ----- */
@@ -691,5 +692,25 @@
 
   .repoTitle {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .headerLeft {
+    gap: 0.5rem;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+
+  .main {
+    padding: 0.75rem 0.5rem;
   }
 }

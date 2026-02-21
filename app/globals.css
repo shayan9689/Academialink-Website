@@ -1,6 +1,19 @@
-/* Smooth scroll for in-page anchors (global; not allowed in CSS Modules) */
+/* Prevent horizontal scroll on all devices */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 /* Global dark theme – applied when dashboard sets data-theme="dark" on <html> */

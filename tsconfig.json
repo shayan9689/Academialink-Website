@@ -15,7 +15,7 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./*"],
-      "@/backend": ["../backend"],
+      "@/backend": ["./backend"],
       "@/backend/*": ["../backend/*"]
     }
   },

@@ -7,9 +7,9 @@ Academic research repository – Next.js frontend and Supabase backend.
 ```
 ├── frontend/          # Next.js app (App Router, API routes, UI)
 │   ├── app/
+│   ├── backend/       # Server logic (auth, db, storage) – used by API routes
 │   ├── public/
 │   └── ...
-├── backend/           # Server logic (auth, db, storage) – used by frontend API routes
 ├── .env               # Supabase keys (do not commit)
 └── package.json       # Runs dev/build/start via frontend
 ```

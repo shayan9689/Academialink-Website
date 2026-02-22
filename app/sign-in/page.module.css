@@ -110,6 +110,11 @@
   border-color: #cbd5e1;
 }
 
+.socialBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .socialBtnIcon {
   width: 20px;
   height: 20px;

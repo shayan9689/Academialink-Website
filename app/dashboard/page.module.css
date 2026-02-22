@@ -221,6 +221,11 @@
   margin-left: var(--dashboard-sidebar-width);
 }
 
+.mainContent {
+  flex: 1;
+  min-height: 0;
+}
+
 .topBarRight {
   display: flex;
   align-items: center;

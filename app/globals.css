@@ -1,14 +1,25 @@
-/* Prevent horizontal scroll on all devices */
-html,
+/* One page, one scroll: no inner scroll containers – document scroll only */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+  -ms-overflow-style: none; /* IE and old Edge */
+}
+
 body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  min-height: 100vh;
 }
 
-html {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
+/* Hide scrollbar (Chrome, Safari, Edge); scroll still works */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 *,

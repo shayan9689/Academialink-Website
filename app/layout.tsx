@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import styles from './layout.module.css';
 import { AuthProvider } from './lib/auth/AuthProvider';
+import ConditionalFooter from './components/ConditionalFooter';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -25,7 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={`${inter.className} ${styles.root}`}>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {children}
+          <ConditionalFooter />
+        </AuthProvider>
       </body>
     </html>
   );

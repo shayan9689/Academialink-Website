@@ -5,6 +5,7 @@ import { useDashboard } from '../DashboardContext';
 import { LogoIcon, LogoIconDark, SearchIcon, BellIcon } from '../../components/Icons';
 import ProfileDropdown from './ProfileDropdown';
 import PageTransition from '../../components/PageTransition';
+import Footer from '../../components/Footer';
 import styles from '../page.module.css';
 
 function DashboardIcon({ active }: { active?: boolean }) {
@@ -131,7 +132,10 @@ export default function DashboardShell({ children, activeSection }: DashboardShe
           </aside>
 
           <main className={styles.main}>
-            <PageTransition>{children}</PageTransition>
+            <div className={styles.mainContent}>
+              <PageTransition>{children}</PageTransition>
+            </div>
+            <Footer />
           </main>
         </div>
       </div>

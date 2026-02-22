@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '../lib/supabase/client';
 import styles from './page.module.css';
 
@@ -82,12 +82,50 @@ export interface SignInFormProps {
 
 export default function SignInForm({ onSwitchToSignUp, onSuccess, titleId, hideSignUpRow }: SignInFormProps = {}) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [remember, setRemember] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const err = searchParams.get('error');
+    if (err) setError(decodeURIComponent(err));
+  }, [searchParams]);
+
+  const handleOAuthSignIn = async (provider: 'google' | 'apple') => {
+    setError(null);
+    setLoading(true);
+    try {
+      const supabase = createClient();
+      const { data, error: err } = await supabase.auth.signInWithOAuth({
+        provider,
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+      if (err) {
+        const msg =
+          err.message?.includes('not enabled') || err.message?.includes('validation_failed')
+            ? `${provider === 'google' ? 'Google' : 'Apple'} sign-in is not set up yet. Please use email, or ask the site admin to enable it in Supabase.`
+            : err.message;
+        setError(msg);
+        setLoading(false);
+        return;
+      }
+      if (data?.url) {
+        window.location.href = data.url;
+        return;
+      }
+      setError('Could not start sign in');
+    } catch {
+      setError('Something went wrong');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -121,11 +159,21 @@ export default function SignInForm({ onSwitchToSignUp, onSuccess, titleId, hideS
       </p>
 
       <div className={styles.socialButtons}>
-        <button type="button" className={styles.socialBtn}>
+        <button
+          type="button"
+          className={styles.socialBtn}
+          onClick={() => handleOAuthSignIn('apple')}
+          disabled={loading}
+        >
           <AppleIcon />
           Continue with Apple
         </button>
-        <button type="button" className={styles.socialBtn}>
+        <button
+          type="button"
+          className={styles.socialBtn}
+          onClick={() => handleOAuthSignIn('google')}
+          disabled={loading}
+        >
           <GoogleIcon />
           Continue with Google
         </button>

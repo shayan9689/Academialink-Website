@@ -24,3 +24,13 @@ Use **Production**, **Preview**, and **Development** as needed (at least Product
 Click **Deploy**. Vercel will run `npm install` and `npm run build` (as in `vercel.json`).
 
 If the build fails, check the build log on Vercel; the same commands run locally with `npm run build`.
+
+## Google & Apple sign-in (OAuth)
+
+The app supports **Continue with Google** and **Continue with Apple**. To enable them:
+
+1. In [Supabase Dashboard](https://supabase.com/dashboard) → your project → **Authentication** → **Providers**, enable **Google** and/or **Apple**.
+2. For each provider, add your **Site URL** and **Redirect URL**:
+   - **Site URL**: `https://your-domain.com` (or `http://localhost:3000` for local)
+   - **Redirect URL**: `https://your-domain.com/auth/callback` (or `http://localhost:3000/auth/callback`)
+3. Enter the OAuth client ID and secret from Google Cloud Console (for Google) or Apple Developer (for Apple). Supabase shows the exact fields and links.

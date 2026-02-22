@@ -1,10 +1,12 @@
-/* Landing Page – CSS Modules, responsive; based on 1440px layout */
+/* Landing Page – single page, one scroll; all content in document flow */
 .page {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   background: #ffffff;
   overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 0;
 }
 
 /* ----- Header: fixed so it does not scroll with page ----- */

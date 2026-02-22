@@ -1,0 +1,105 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 400px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slimBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.4rem 0.75rem;
+  background: #e2e8f0;
+  font-size: 0.8125rem;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+.pageLabel {
+  font-variant-numeric: tabular-nums;
+}
+
+.zoomWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.zoomBtn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+}
+
+.zoomBtn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.zoomValue {
+  min-width: 2.5rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.pageNav {
+  display: flex;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.pageBtn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8125rem;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #475569;
+  cursor: pointer;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: #f8fafc;
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.canvasWrap {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.canvas {
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.bar {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #64748b;
+  background: #f1f5f9;
+  border-radius: 8px;
+}

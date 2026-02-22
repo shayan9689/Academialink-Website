@@ -1,0 +1,37 @@
+.content {
+  padding: 1.5rem 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: #64748b;
+  margin: 0 0 1.5rem;
+}
+
+.list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+.backLink {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}

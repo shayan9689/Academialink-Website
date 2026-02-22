@@ -1,0 +1,22 @@
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.back {
+  color: var(--color-text-secondary, #64748b);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.back:hover {
+  text-decoration: underline;
+}
+.title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.placeholder {
+  color: var(--color-text-secondary, #64748b);
+  line-height: 1.6;
+}

@@ -1,0 +1,1029 @@
+/* Landing Page – CSS Modules, responsive; based on 1440px layout */
+.page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ----- Header: fixed so it does not scroll with page ----- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  gap: 0.75rem;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 2.5rem;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.25;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  line-height: 1.25;
+}
+
+.logoIconSvg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+
+.navLink {
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #2563eb;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconBtn {
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.iconBtn:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+}
+
+.loginLink {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+button.loginLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.btnSignUp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  min-height: 44px;
+  min-width: 44px;
+  box-sizing: border-box;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btnSignUp:hover {
+  background: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.signOutBtn {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #475569;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  text-decoration: none;
+}
+
+.signOutBtn:hover {
+  color: #1e293b;
+  text-decoration: underline;
+}
+
+/* ----- Hero ----- */
+.hero {
+  padding: 3rem 1.25rem 0;
+  padding-top: 5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.heroBanner {
+  display: inline-block;
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+  color: #1d4ed8;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  max-width: 100%;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.heroTitleAccent {
+  color: #2563eb;
+  display: block;
+}
+
+.heroSubtitle {
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+.heroCta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  box-sizing: border-box;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.btnPrimary:hover {
+  background: #1d4ed8;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btnPrimary:active {
+  transform: scale(0.98);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btnSecondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+/* Site-wide toast: center-top of page */
+.heroLoginToast {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background: #dc2626;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.heroLoginToastHide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-8px);
+  pointer-events: none;
+}
+
+/* ----- Trust + Stats (divider, typography, gaps per screenshot) ----- */
+.trustStatsSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.trustHeading {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #475569;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+  align-items: center;
+}
+
+.trustCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #475569;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.trustIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* ----- Trust / Institutions (standalone section if used elsewhere) ----- */
+.trust {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.statCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.statCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: #e2e8f0;
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  background: #dbeafe;
+  border-radius: 10px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statIconSvg {
+  color: #2563eb;
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #475569;
+  margin: 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ----- Feature sections ----- */
+.feature {
+  padding: 3rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.featureReverse {
+  direction: rtl;
+}
+
+.featureReverse > * {
+  direction: ltr;
+}
+
+.featureContent {
+  text-align: left;
+}
+
+.featureIconSvg {
+  width: 48px;
+  height: 48px;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.featureImageWrap {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #f1f5f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.featureImage {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1rem;
+}
+
+.featureDesc {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureList li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  color: #475569;
+}
+
+.featureList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: #2563eb;
+  border-radius: 50%;
+}
+
+
+/* ----- CTA block ----- */
+.ctaBlock {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.ctaTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.75rem;
+}
+
+.ctaText {
+  max-width: 36rem;
+  margin: 0 auto 1.5rem;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctaLink {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.ctaLink:hover {
+  text-decoration: underline;
+}
+
+/* Ensure CTA primary button works as link */
+.ctaButtons .btnPrimary {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ----- Mission (Learn about) ----- */
+.missionSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.missionTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.missionLead {
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.missionCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.missionCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.75rem;
+}
+
+.missionCardText {
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.missionFooter {
+  font-size: 1rem;
+  color: #475569;
+  text-align: center;
+  margin: 0;
+}
+
+/* ----- Footer ----- */
+.footer {
+  padding: 3rem 2rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.footerGrid {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.footerBrand {
+  max-width: 280px;
+}
+
+.footerLogoWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footerLogoIconSvg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.footerLogoText {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.footerDesc {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.footerSocial {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footerSocialBtn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.footerSocialBtn:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+}
+
+.footerColTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 1rem;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks a {
+  display: block;
+  font-size: 0.875rem;
+  color: #64748b;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.footerLinks a:hover {
+  color: #2563eb;
+}
+
+.footerNewsText {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+}
+
+.footerNewsForm {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footerNewsInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.footerNewsInput::placeholder {
+  color: #94a3b8;
+}
+
+.footerNewsSubmit {
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.footerNewsSubmit:hover {
+  background: #1d4ed8;
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* ----- Responsive: 1024px, 768px, 640px ----- */
+@media (max-width: 1024px) {
+  .feature {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .featureReverse {
+    direction: ltr;
+  }
+
+  .featureImageWrap {
+    order: -1;
+    max-height: 280px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .headerLeft {
+    min-height: 44px;
+  }
+
+  .headerRight {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding: 2rem 1rem 0;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .heroCta,
+  .ctaButtons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .heroCta .btnPrimary,
+  .heroCta .btnSecondary,
+  .ctaButtons .btnPrimary {
+    width: 100%;
+  }
+
+  .trustStatsSection {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .feature {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .featureImageWrap {
+    max-height: 240px;
+  }
+
+  .ctaBlock {
+    padding: 3rem 1rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaButtons .btnPrimary {
+    width: 100%;
+  }
+
+  .missionSection {
+    padding: 3rem 1rem;
+  }
+
+  .missionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footerBrand {
+    max-width: none;
+  }
+
+  .footerLogoWrap {
+    justify-content: center;
+  }
+
+  .footerSocial {
+    justify-content: center;
+  }
+
+  .footerNewsForm {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .logoText {
+    font-size: 1.125rem;
+  }
+
+  .hero {
+    padding: 1.5rem 0.75rem 0;
+  }
+
+  .heroBanner {
+    font-size: 0.6875rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .trustStatsSection {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .trustRow {
+    gap: 0.75rem 1rem;
+  }
+
+  .trustCell {
+    font-size: 0.875rem;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .featureImageWrap {
+    max-height: 200px;
+  }
+
+  .featureTitle {
+    font-size: 1.25rem;
+  }
+
+  .featureDesc {
+    font-size: 0.9375rem;
+  }
+
+  .ctaBlock {
+    padding: 2rem 0.75rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.25rem;
+  }
+
+  .ctaText {
+    font-size: 0.9375rem;
+  }
+
+  .missionSection {
+    padding: 2rem 0.75rem;
+  }
+
+  .missionTitle {
+    font-size: 1.25rem;
+  }
+
+  .missionLead {
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem 1.5rem;
+  }
+}
+
+/* Extra small devices (phones in portrait, ~380px and below) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .headerRight {
+    gap: 0.35rem;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 1.25rem 0.5rem 0;
+  }
+
+  .heroBanner {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.25rem, 5.5vw, 1.75rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .trustStatsSection {
+    padding: 1rem 0.5rem;
+  }
+
+  .trustRow {
+    gap: 0.5rem 0.75rem;
+  }
+
+  .trustCell {
+    font-size: 0.8125rem;
+  }
+
+  .statsRow {
+    gap: 0.5rem;
+  }
+
+  .feature {
+    padding: 1.25rem 0.5rem;
+  }
+
+  .featureImageWrap {
+    max-height: 180px;
+  }
+
+  .featureTitle {
+    font-size: 1.125rem;
+  }
+
+  .ctaBlock {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .missionSection {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .footer {
+    padding: 1.5rem 0.5rem 1rem;
+  }
+}

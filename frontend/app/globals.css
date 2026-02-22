@@ -1,0 +1,62 @@
+/* Prevent horizontal scroll on all devices */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Global dark theme – applied when dashboard sets data-theme="dark" on <html> */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .root,
+[data-theme="dark"] body {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Site-wide toast position: center-top of page (for "Sign in first", success, etc.) */
+.toast-center-top {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  pointer-events: auto;
+}
+
+.toast-center-top.toast-hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-8px);
+  pointer-events: none;
+}
+
+.toast-center-top.toast-success {
+  color: #fff;
+  background: #16a34a;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
+}
+
+.toast-center-top.toast-error {
+  color: #fff;
+  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+}

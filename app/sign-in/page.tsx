@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import styles from './page.module.css';
 import SignInForm from './SignInForm';
 import LogoLink from '../components/LogoLink';
@@ -28,7 +29,9 @@ export default function SignInPage() {
         <p className={styles.pageTagline}>Research Repository</p>
       </header>
 
-      <SignInForm />
+      <Suspense fallback={<div className={styles.card} style={{ padding: '2rem', textAlign: 'center' }}>Loading…</div>}>
+        <SignInForm />
+      </Suspense>
     </div>
   );
 }
